@@ -1,0 +1,81 @@
+name: 버그 리포트
+description: 버그 현상과 재현 정보를 기록합니다.
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        확인한 내용을 기준으로 작성해 주세요.
+        미확인 항목은 "미확인", 해당하지 않는 항목은 "해당 없음"으로 표시해 주세요.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: 버그 요약
+      description: 어떤 상황에서 어떤 문제가 발생하는지 간략히 설명해 주세요.
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 재현 환경
+      description: |
+        사용하거나 분석한 코드 버전과 데이터셋을 적어 주세요.
+        재현에 필요한 실행 환경과 설정도 함께 적어 주세요.
+      placeholder: |
+        - 코드 버전 (릴리스/태그 또는 커밋):
+        - 데이터셋 (이름, 준비 방법 또는 샘플):
+        - 실행 환경 (OS, 런타임, Docker 등):
+        - 관련 설정:
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 재현 방법
+      description: |
+        사전 조건, 입력값, 실행 순서, 발생 빈도를 적어 주세요.
+        - 정적 분석으로 발견했다면 그 사실을 명시하고, 문제 코드의 위치와 문제가 되는 이유를 설명해 주세요.
+        - 발생 조건이나 판단 근거가 불충분하면 발견 맥락과 미확인 사항을 설명하고, 발생 조건이 불명확함을 명시해 주세요.
+      placeholder: |
+        사전 조건:
+
+        입력값:
+
+        실행 순서:
+        1.
+        2.
+
+        발생 빈도:
+
+        정적 분석 또는 발생 조건 미확인 시:
+        - 발견 맥락:
+        - 문제 코드와 판단 근거:
+        - 미확인 사항:
+    validations:
+      required: true
+
+  - type: textarea
+    id: results
+    attributes:
+      label: 실제 결과 및 예상 결과
+      description: |
+        실제로 관찰한 결과와 정상적으로 기대한 결과를 구분해 주세요.
+        실행으로 확인하지 않은 경우에는 그 사실을 밝히고, 코드상 예상되는 문제를 적어 주세요.
+        관련 로그나 오류 메시지가 있으면 함께 첨부해 주세요.
+      placeholder: |
+        실제 결과 (실행 미확인 시 그 사실과 예상되는 문제):
+
+        정상적으로 기대한 결과:
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: 해결 방법 제안
+      description: 버그 해결 아이디어가 있는 경우에만 작성해 주세요.
+    validations:
+      required: false
